@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Is it Summer?" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-13T14:40:33" hostname="mac29.local" time="5.057">
+  <properties/>
+  <testcase name="Check the wsb page" classname="Is it Summer?" time="5.057"/>
+  <system-out><![CDATA[
+Scenario: Check the wsb page          ?[90m# src/test/resources/demo.feature:4?[0m
+https://s1.demo.opensourcecms.com/wordpress/
+  ?[32mGiven ?[0m?[32mI navigate to ?[0m?[32m?[1m"demoPage"?[0m?[32m page?[0m ?[90m# StepsDefinition.<init>(StepsDefinition.java:19)?[0m
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 86.0.4240.22 (398b0743353ff36fb1b82468f63a3a93b4e2e89e-refs/branch-heads/4240@{#378}) on port 47168
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 13, 2020 4:40:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

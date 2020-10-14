@@ -1,0 +1,12 @@
+.idea
+.gradle
+build
+gradle
+target
+
+# coverage
+reports
+
+
+
+

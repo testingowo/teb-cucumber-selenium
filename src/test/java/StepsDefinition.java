@@ -1,9 +1,11 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import demo.pages.MainDemoPage;
+import demo.pages.NewPostPage;
 import io.cucumber.java8.En;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,6 +20,7 @@ public class StepsDefinition implements En {
     protected MainDemoPage mainDemoPage;
     protected FirstLevelStudies firstLevelStudies;
     protected MajorAndSpecialtyPage majorAndSpecialtyPage;
+    protected NewPostPage newPostPage;
 
     public StepsDefinition() {
 
@@ -67,13 +70,25 @@ public class StepsDefinition implements En {
             mainDemoPage.clickRandomPost();
         });
 
-        Then("I verify post form {string}", () -> {
-
+        Then("I verify post form {string}", (String labelNames) -> {
+//            String[] labels = labelNames.trim().split(",");
+            newPostPage = new NewPostPage(driver);
+//            System.out.println(labels[0] + labels[1] + labels[2] + labels[3]);
+            assertTrue(newPostPage.verifyFieldLabels(labelNames));
         });
-    }
 
-    @After
-    public void close() {
-        driver.close();
+        When("I fill comment fields", () -> {
+            newPostPage.fillCommentsData();
+        });
+
+        When("I click submit button", () -> {
+            newPostPage.clickSubmitBtn();
+            newPostPage.compareComments();
+        });
+
+        Then("I compare added and generated comment", () -> {
+            Assert.assertTrue(newPostPage.compareComments());
+            driver.close();
+        });
     }
 }

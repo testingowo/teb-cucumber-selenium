@@ -1,3 +1,5 @@
+package wsb.pages;
+
 import Model.StudySubjectCard;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import abstractPages.AbstractPage;
 
 public class MajorAndSpecialtyPage extends AbstractPage {
 

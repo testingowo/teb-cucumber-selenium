@@ -18,6 +18,7 @@ dependencies {
 //    testCompile group: 'junit', name: 'junit', version: '4.12'
     testImplementation 'io.cucumber:cucumber-java8:5.0.0-RC4'
     testImplementation 'io.cucumber:cucumber-junit:5.0.0-RC4'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
 }
 
 dependencies {

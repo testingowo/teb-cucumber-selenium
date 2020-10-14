@@ -1,9 +1,18 @@
 Feature: Is it Summer?
   Everybody likes Summer
 
-  Scenario: Check the wsb page
+  Scenario Outline: Check the wsb page
 
     Given I navigate to "demoPage" page
+    When I click random post
+    Then I verify post form <labels>
+
+    Examples:
+    |labels|
+  | Comment     |
+  | Name        |
+  | Email       |
+  | Website     |
 #    When I click menu item with text "Studia i szkolenia"
 #    And I click submenu item with text "Studia I stopnia"
 #    And I click "Kierunki i specjalności" in tab menu

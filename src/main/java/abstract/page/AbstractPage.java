@@ -1,6 +1,9 @@
+package abstractPages;
+
 import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
+import parser.Utils;
 
 public class AbstractPage {
     public WebDriver driver;
@@ -10,6 +13,6 @@ public class AbstractPage {
     }
 
     public void navigateToPage(String descriptor) throws IOException, ParseException {
-        driver.navigate().to(ParseJson.getUrlByDescriptor(descriptor));
+        driver.navigate().to(Utils.getUrlByDescriptor(descriptor));
     }
 }

@@ -1,5 +1,4 @@
 Feature: Adding comment feature
-  Everybody likes Summer
 
   Scenario Outline: Check the wsb page
 

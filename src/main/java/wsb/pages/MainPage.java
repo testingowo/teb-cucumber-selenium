@@ -22,7 +22,6 @@ public class MainPage extends AbstractPage {
     }
 
     public WebElement getMenuItemByName(String menuItemName) {
-//        PageFactory.initElements(driver, this);
         return menuItems.stream().filter(el -> el.getText().contains(menuItemName))
                 .findFirst().orElseThrow(() -> new NoSuchElementException());
     }

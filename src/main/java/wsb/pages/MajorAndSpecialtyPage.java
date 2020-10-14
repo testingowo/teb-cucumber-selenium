@@ -71,14 +71,12 @@ public class MajorAndSpecialtyPage extends AbstractPage {
         return subjectCards;
     }
 
+    //additional method to click all checkboxes
     public void clickCheckboxes() {
-//        for(int i = 0; i < checkboxes.size(); i++) {
-//            System.out.println(checkboxes.get(i).findElement(By.xpath("//*/ancestor::label")).getText());
-//        }
-//        for(WebElement checkBox : checkboxes) {
-//            System.out.println(checkBox.findElement(By.xpath("//*/ancestor::label")).getText());
-//            checkBox.click();
-//            System.out.println(checkBox.findElement(By.xpath("//*/ancestor::label")).getText());
-//        }
+        for(WebElement checkBox : checkboxes) {
+            System.out.println(checkBox.findElement(By.xpath("//*/ancestor::label")).getText());
+            checkBox.click();
+            System.out.println(checkBox.findElement(By.xpath("//*/ancestor::label")).getText());
+        }
     }
 }

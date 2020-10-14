@@ -15,6 +15,7 @@ import wsb.pages.MainPage;
 import wsb.pages.MajorAndSpecialtyPage;
 
 public class StepsDefinition implements En {
+
     protected WebDriver driver;
     protected MainPage mainPage;
     protected MainDemoPage mainDemoPage;
@@ -27,11 +28,11 @@ public class StepsDefinition implements En {
         Given("I navigate to {string} page", (String pageName) -> {
             WebDriverManager.chromedriver().setup();
             System.out.println(pageName);
-            if(pageName.equals("wsbPage")) {
+            if (pageName.equals("wsbPage")) {
                 driver = new ChromeDriver();
                 mainPage = new MainPage(driver);
                 mainPage.navigateToPage(pageName);
-            } else if(pageName.equals("demoPage")) {
+            } else if (pageName.equals("demoPage")) {
                 driver = new ChromeDriver();
                 mainDemoPage = new MainDemoPage(driver);
                 mainDemoPage.navigateToPage(pageName);
@@ -66,8 +67,9 @@ public class StepsDefinition implements En {
         });
 
         Then("Each result contains {string} city", (String city) -> {
-            for(int i =0; i < majorAndSpecialtyPage.getSubjectCards().size(); i++) {
-                assertTrue(majorAndSpecialtyPage.getSubjectCards().get(i).getCities().contains(city));
+            for (int i = 0; i < majorAndSpecialtyPage.getSubjectCards().size(); i++) {
+                assertTrue(
+                        majorAndSpecialtyPage.getSubjectCards().get(i).getCities().contains(city));
 
             }
         });
@@ -80,9 +82,8 @@ public class StepsDefinition implements En {
             assertTrue(majorAndSpecialtyPage.getSortBtn().isDisplayed() &&
                     majorAndSpecialtyPage.getFilterBtn().isDisplayed() &&
                     majorAndSpecialtyPage.getSearch().isDisplayed());
+            driver.quit();
         });
-
-
 
         When("I click random post", () -> {
             mainDemoPage.clickRandomPost();

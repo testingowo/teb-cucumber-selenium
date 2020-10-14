@@ -11,6 +11,3 @@ Feature: Wsb test feature
     And Each result contains "Wrocław" city
     And "Zapisz się online" button is displayed
     And Sorting, filters and search field are displayed
-
-
-#    Then I should be told "Nope"

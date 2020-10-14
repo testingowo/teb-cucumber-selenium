@@ -36,13 +36,13 @@ public class MajorAndSpecialtyPage extends AbstractPage {
     @FindBy(css = "[class*='button']")
     private List<WebElement> buttons;
 
-    @FindBy(className = "filter")
+    @FindBy(className = "filters")
     private WebElement filter;
 
     @FindBy(className = "sort")
     private WebElement sort;
 
-    @FindBy(className = "search")
+    @FindBy(className = "search-box")
     private WebElement search;
 
     public MajorAndSpecialtyPage(WebDriver driver) {

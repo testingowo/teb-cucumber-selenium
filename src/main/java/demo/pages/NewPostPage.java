@@ -77,13 +77,17 @@ public class NewPostPage extends abstractPages.AbstractPage {
     }
 
     public boolean compareComments() {
+        setPublishedCommentData();
+        return comment.getAuthor().equals(publishedComment.getAuthor()) &&
+                comment.getCommentMessage().equals(publishedComment.getCommentMessage());
+    }
+
+    public void setPublishedCommentData() {
         publishedComment = new Comment();
         publishedComment
                 .setAuthor(publishedCommentAuthor.get(publishedCommentAuthor.size() - 1).getText());
         publishedComment.setCommentMessage(
                 publishedCommentMessage.get(publishedCommentMessage.size() - 1).getText());
-        return comment.getAuthor().equals(publishedComment.getAuthor()) &&
-                comment.getCommentMessage().equals(publishedComment.getCommentMessage());
     }
 
     public void clickSubmitBtn() {

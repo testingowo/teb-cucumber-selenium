@@ -1,15 +1,20 @@
-Feature: Is it Summer?
+Feature: Adding comment feature
   Everybody likes Summer
 
   Scenario Outline: Check the wsb page
 
     Given I navigate to "demoPage" page
     When I click random post
-    Then I verify post form <labels>
+    Then I verify post form "<labels>"
+    When I fill comment fields
+    And I click submit button
+    Then I compare added and generated comment
 
     Examples:
     |labels|
-  | Comment, Name,  Email, Website    |
+    | Comment, Name *,  Email *, Website    |
+
+
 
 #    When I click menu item with text "Studia i szkolenia"
 #    And I click submenu item with text "Studia I stopnia"

@@ -1,6 +1,7 @@
 package wsb.pages;
 
 import Model.StudySubjectCard;
+import abstractPages.AbstractPage;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import abstractPages.AbstractPage;
 
 public class MajorAndSpecialtyPage extends AbstractPage {
 
@@ -63,20 +63,13 @@ public class MajorAndSpecialtyPage extends AbstractPage {
             subjectCards.get(i).setCities(cities.get(i).getText());
         }
 
-        for (StudySubjectCard card : subjectCards) {
-            System.out.println(card.getCardImageUrl());
-            System.out.println(card.getCardTitle());
-            System.out.println(card.getCities());
-        }
         return subjectCards;
     }
 
     //additional method to click all checkboxes
     public void clickCheckboxes() {
-        for(WebElement checkBox : checkboxes) {
-            System.out.println(checkBox.findElement(By.xpath("//*/ancestor::label")).getText());
+        for (WebElement checkBox : checkboxes) {
             checkBox.click();
-            System.out.println(checkBox.findElement(By.xpath("//*/ancestor::label")).getText());
         }
     }
 }

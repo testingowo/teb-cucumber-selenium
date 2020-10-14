@@ -23,16 +23,16 @@ public class MainPage extends AbstractPage {
 
     public WebElement getMenuItemByName(String menuItemName) {
         return menuItems.stream().filter(el -> el.getText().contains(menuItemName))
-                .findFirst().orElseThrow(() -> new NoSuchElementException());
+                .findFirst().orElseThrow(NoSuchElementException::new);
     }
 
     public WebElement getOptionByDescription(String description) {
         return studiesOptions.stream().filter(el -> el.getText().contains(description))
-                .findFirst().orElseThrow(() -> new NoSuchElementException());
+                .findFirst().orElseThrow(NoSuchElementException::new);
     }
 
-    public WebElement returnPreferredMenuItem(String desc, WebElement element) {
+    public WebElement returnPreferredMenuItem(String desc) {
         return studiesOptions.stream().filter(el -> el.getText().contains(desc))
-                .findFirst().orElseThrow(() -> new NoSuchElementException());
+                .findFirst().orElseThrow(NoSuchElementException::new);
     }
 }

@@ -63,17 +63,33 @@ public class StepsDefinition implements En {
 
             assertEquals("Search result should equal ", expectedNumberOfCards,
                     majorAndSpecialtyPage.getSubjectCards().size());
-            driver.quit();
         });
+
+        Then("Each result contains {string} city", (String city) -> {
+            for(int i =0; i < majorAndSpecialtyPage.getSubjectCards().size(); i++) {
+                assertTrue(majorAndSpecialtyPage.getSubjectCards().get(i).getCities().contains(city));
+
+            }
+        });
+
+        Then("{string} button is displayed", (String btnName) -> {
+            assertTrue(majorAndSpecialtyPage.getBtnByName(btnName).isDisplayed());
+        });
+
+        Then("Sorting, filters and search field are displayed", () -> {
+            assertTrue(majorAndSpecialtyPage.getSortBtn().isDisplayed() &&
+                    majorAndSpecialtyPage.getFilterBtn().isDisplayed() &&
+                    majorAndSpecialtyPage.getSearch().isDisplayed());
+        });
+
+
 
         When("I click random post", () -> {
             mainDemoPage.clickRandomPost();
         });
 
         Then("I verify post form {string}", (String labelNames) -> {
-//            String[] labels = labelNames.trim().split(",");
             newPostPage = new NewPostPage(driver);
-//            System.out.println(labels[0] + labels[1] + labels[2] + labels[3]);
             assertTrue(newPostPage.verifyFieldLabels(labelNames));
         });
 

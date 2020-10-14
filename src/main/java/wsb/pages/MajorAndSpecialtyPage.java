@@ -33,6 +33,18 @@ public class MajorAndSpecialtyPage extends AbstractPage {
     @FindBy(className = "clear")
     private WebElement clearLink;
 
+    @FindBy(css = "[class*='button']")
+    private List<WebElement> buttons;
+
+    @FindBy(className = "filter")
+    private WebElement filter;
+
+    @FindBy(className = "sort")
+    private WebElement sort;
+
+    @FindBy(className = "search")
+    private WebElement search;
+
     public MajorAndSpecialtyPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -71,5 +83,22 @@ public class MajorAndSpecialtyPage extends AbstractPage {
         for (WebElement checkBox : checkboxes) {
             checkBox.click();
         }
+    }
+
+    public WebElement getBtnByName(String btnName) {
+        return buttons.stream().filter(btn -> btn.getText().contains(btnName))
+                .findFirst().get();
+    }
+
+    public WebElement getSortBtn() {
+        return sort;
+    }
+
+    public WebElement getFilterBtn() {
+        return filter;
+    }
+
+    public WebElement getSearch() {
+        return search;
     }
 }

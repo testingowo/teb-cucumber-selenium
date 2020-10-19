@@ -1,4 +1,4 @@
-package abstractPages;
+package abstracted.page;
 
 import java.io.IOException;
 import org.json.simple.parser.ParseException;

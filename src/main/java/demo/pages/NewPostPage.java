@@ -6,9 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import abstracted.page.AbstractPage;
 import parser.Utils;
 
-public class NewPostPage extends abstractPages.AbstractPage {
+public class NewPostPage extends AbstractPage {
 
     @FindBy(id = "respond")
     private WebElement commentForm;

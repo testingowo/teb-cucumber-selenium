@@ -1,12 +1,12 @@
 package wsb.pages;
 
-import abstractPages.AbstractPage;
 import java.util.List;
 import java.util.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import abstracted.page.AbstractPage;
 
 public class FirstLevelStudies extends AbstractPage {
 

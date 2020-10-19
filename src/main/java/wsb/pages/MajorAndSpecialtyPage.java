@@ -1,7 +1,6 @@
 package wsb.pages;
 
 import Model.StudySubjectCard;
-import abstractPages.AbstractPage;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -11,13 +10,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import abstracted.page.AbstractPage;
 
 public class MajorAndSpecialtyPage extends AbstractPage {
 
     private List<StudySubjectCard> subjectCards;
     private WebDriverWait wait = new WebDriverWait(driver, 20);
 
-    //    @FindBy(xpath = "//div[@class='filters']/div/div")
     @FindBy(xpath = "//div[@class='filters']/div/div/label/span")
     private List<WebElement> checkBoxList;
 

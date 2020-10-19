@@ -26,6 +26,7 @@ public class StepsDefinition implements En {
     public StepsDefinition() {
 
         Given("I navigate to {string} page", (String pageName) -> {
+            WebDriverManager.chromedriver().ignoreVersions("87");
             WebDriverManager.chromedriver().setup();
             System.out.println(pageName);
             if (pageName.equals("wsbPage")) {
@@ -70,7 +71,6 @@ public class StepsDefinition implements En {
             for (int i = 0; i < majorAndSpecialtyPage.getSubjectCards().size(); i++) {
                 assertTrue(
                         majorAndSpecialtyPage.getSubjectCards().get(i).getCities().contains(city));
-
             }
         });
 

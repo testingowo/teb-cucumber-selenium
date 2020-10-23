@@ -21,4 +21,12 @@ public class StudySubjectCard {
     public void setCities(String cities) {
         this.cities = cities;
     }
+
+    public String getCardImageUrl() {
+        return cardImageUrl;
+    }
+
+    public String getCardTitle() {
+        return cardTitle;
+    }
 }

@@ -71,6 +71,8 @@ public class StepsDefinition implements En {
             for (int i = 0; i < majorAndSpecialtyPage.getSubjectCards().size(); i++) {
                 assertTrue(
                         majorAndSpecialtyPage.getSubjectCards().get(i).getCities().contains(city));
+                assertTrue(!majorAndSpecialtyPage.getSubjectCards().get(i).getCardImageUrl()
+                        .isEmpty());
             }
         });
 

@@ -26,7 +26,7 @@ public class StepsDefinition implements En {
     public StepsDefinition() {
 
         Given("I navigate to {string} page", (String pageName) -> {
-            WebDriverManager.chromedriver().ignoreVersions("87");
+            WebDriverManager.chromedriver().ignoreVersions("91");
             WebDriverManager.chromedriver().setup();
             System.out.println(pageName);
             if (pageName.equals("wsbPage")) {
